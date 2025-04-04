@@ -1,6 +1,10 @@
 (defn valor-descontado
   "Retorna valor descontado"
   [valor-bruto]
-  (* valor-bruto 0.9))
+    (if (> valor-bruto 100)
+      (let [desconto 0.10]
+        (- valor-bruto (* valor-bruto desconto)))
+      valor-bruto))
 
-(println (valor-descontado 190))
+(println (valor-descontado 10))
+
